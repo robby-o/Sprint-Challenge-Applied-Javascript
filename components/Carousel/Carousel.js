@@ -75,6 +75,6 @@ buttons.forEach(button => {
     img.id = "";
     setTimeout(() => {
       img.id = "fade-in";
-    }, 500);
+    }, 100);
   });
 });
