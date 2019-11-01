@@ -26,7 +26,9 @@ function Carousel() {
 
   carousel.classList.add("carousel");
   leftButton.classList.add("left-button");
+  leftButton.classList.add("button");
   rightButton.classList.add("right-button");
+  rightButton.classList.add("button");
 
   carousel.appendChild(leftButton);
   carousel.appendChild(rightButton);
@@ -48,6 +50,7 @@ imgArray = [
 
 // button functionality
 let index = 0;
+img.id = "fade-in";
 img.src = imgArray[index];
 const rightButton = document.querySelector(".right-button");
 rightButton.addEventListener("click", () => {
@@ -64,4 +67,14 @@ leftButton.addEventListener("click", () => {
   }
   index--;
   img.src = imgArray[index];
+});
+
+const buttons = document.querySelectorAll(".button");
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    img.id = "";
+    setTimeout(() => {
+      img.id = "fade-in";
+    }, 500);
+  });
 });
