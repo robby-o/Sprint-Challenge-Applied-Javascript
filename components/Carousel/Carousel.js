@@ -50,25 +50,25 @@ imgArray = [
 
 // button functionality
 let index = 0;
-
 img.src = imgArray[index];
 const rightButton = document.querySelector(".right-button");
 rightButton.addEventListener("click", () => {
-  if (index === imgArray.length) {
+  if (index === imgArray.length - 1) {
     index = 0;
+  } else {
+    index++;
   }
-  index++;
   img.src = imgArray[index];
 });
 const leftButton = document.querySelector(".left-button");
 leftButton.addEventListener("click", () => {
   if (index === 0) {
-    index = imgArray.length;
+    index = imgArray.length - 1;
+  } else {
+    index--;
   }
-  index--;
   img.src = imgArray[index];
 });
-
 const buttons = document.querySelectorAll(".button");
 buttons.forEach(button => {
   button.addEventListener("click", () => {
