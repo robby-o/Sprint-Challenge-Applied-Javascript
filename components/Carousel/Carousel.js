@@ -29,7 +29,7 @@ function Carousel() {
   leftButton.classList.add("button");
   rightButton.classList.add("right-button");
   rightButton.classList.add("button");
-
+  img.id = "fade-in";
   carousel.appendChild(leftButton);
   carousel.appendChild(rightButton);
   carousel.appendChild(img);
@@ -50,7 +50,7 @@ imgArray = [
 
 // button functionality
 let index = 0;
-img.id = "fade-in";
+
 img.src = imgArray[index];
 const rightButton = document.querySelector(".right-button");
 rightButton.addEventListener("click", () => {
