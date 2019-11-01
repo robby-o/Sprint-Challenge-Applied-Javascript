@@ -52,9 +52,9 @@ function Article(article) {
 axios
   .get("https://lambda-times-backend.herokuapp.com/articles")
   .then(response => {
-    const articlesList = Object.values(response.data.articles);
+    const articlesTypeList = Object.values(response.data.articles);
 
-    articlesList.forEach(articleType => {
+    articlesTypeList.forEach(articleType => {
       articleType.forEach(article => {
         const newArticle = Article(article);
         card.appendChild(newArticle);
