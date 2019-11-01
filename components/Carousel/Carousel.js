@@ -17,6 +17,13 @@
     <div class="right-button"> > </div>
   </div>
 */
+const imgArray = [
+  "./assets/carousel/mountains.jpeg",
+  "./assets/carousel/computer.jpeg",
+  "./assets/carousel/trees.jpeg",
+  "./assets/carousel/turntable.jpeg"
+];
+let index = 0;
 
 function Carousel() {
   const carousel = document.createElement("div"),
@@ -29,11 +36,12 @@ function Carousel() {
   leftButton.classList.add("button");
   rightButton.classList.add("right-button");
   rightButton.classList.add("button");
-  img.id = "fade-in";
   carousel.appendChild(leftButton);
   carousel.appendChild(rightButton);
   carousel.appendChild(img);
 
+  img.id = "fade-in";
+  img.src = imgArray[index];
   return carousel;
 }
 
@@ -41,16 +49,8 @@ const carouselContainer = document.querySelector(".carousel-container");
 carouselContainer.appendChild(Carousel());
 
 const img = document.querySelector(".carousel img");
-imgArray = [
-  "./assets/carousel/mountains.jpeg",
-  "./assets/carousel/computer.jpeg",
-  "./assets/carousel/trees.jpeg",
-  "./assets/carousel/turntable.jpeg"
-];
 
 // button functionality
-let index = 0;
-img.src = imgArray[index];
 const rightButton = document.querySelector(".right-button");
 rightButton.addEventListener("click", () => {
   if (index === imgArray.length - 1) {
