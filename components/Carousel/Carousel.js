@@ -17,3 +17,51 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function Carousel() {
+  const carousel = document.createElement("div"),
+    leftButton = document.createElement("div"),
+    rightButton = document.createElement("div"),
+    img = document.createElement("img");
+
+  carousel.classList.add("carousel");
+  leftButton.classList.add("left-button");
+  rightButton.classList.add("right-button");
+
+  carousel.appendChild(leftButton);
+  carousel.appendChild(rightButton);
+  carousel.appendChild(img);
+
+  return carousel;
+}
+
+const carouselContainer = document.querySelector(".carousel-container");
+carouselContainer.appendChild(Carousel());
+
+const img = document.querySelector(".carousel img");
+imgArray = [
+  "./assets/carousel/mountains.jpeg",
+  "./assets/carousel/computer.jpeg",
+  "./assets/carousel/trees.jpeg",
+  "./assets/carousel/turntable.jpeg"
+];
+
+// button functionality
+let index = 0;
+img.src = imgArray[index];
+const rightButton = document.querySelector(".right-button");
+rightButton.addEventListener("click", () => {
+  if (index === imgArray.length) {
+    index = 0;
+  }
+  index++;
+  img.src = imgArray[index];
+});
+const leftButton = document.querySelector(".left-button");
+leftButton.addEventListener("click", () => {
+  if (index === 0) {
+    index = imgArray.length;
+  }
+  index--;
+  img.src = imgArray[index];
+});
