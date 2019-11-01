@@ -30,13 +30,28 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for Document Object Model.  In web programming this is referring to the computer's 'view' of the webpage.  
+The DOM is the 'skeleton' of the HTML, CSS, and JS.  It is the API interface that we can use to affect change to our website.
+
 2. What is an event?
+
+An event is just that.  It is an occurence of something, basically anything, happening on the DOM.  Essentially everything but the viewer's eyes triggers an event.
+Mouse clicks, page loads, scrolling, etc.  If one had some sort of VR API set up then even the viewers eye movements could trigger an event.
 
 3. What is an event listener?
 
+Also self-descriptive.  An event listener comes from JS code explicitly directing a node or other 'piece' of the DOM to do 'something' when an event is triggereed.
+An example would be an event listener on a button object that deletes everything in the web page view when the user clicks the button.
+
 4. Why would we convert a NodeList into an Array?
 
+You would do this conversion because NodeList is only 'array-like' and thus does not have access to the full array of array methods. 
+A conversion would unlock them.
+
 5. What is a component?
+
+A component is a modular segment of code.  This segment would typically be reusuable, isolated, and relatively easy to reason about as a stand-alone 'thing'. 
+Breakng the overall program into components keeps the program DRY and allows for better long-term maintanence as well as ensuring the program is easier to understand.
 
 ### Git Set up
 
